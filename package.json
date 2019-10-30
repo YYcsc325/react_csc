@@ -18,7 +18,7 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-import": "^1.12.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "csc_webpack": "^1.0.4",
+    "csc_webpack": "^1.0.5",
     "history": "^4.7.2",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.8",
@@ -32,7 +32,7 @@
     "react-loadable": "^5.5.0",
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.0.0",
-    "react-utils-csc": "^1.0.3",
+    "react-utils-csc": "^1.0.4",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0"
   }

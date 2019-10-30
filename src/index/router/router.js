@@ -1,39 +1,39 @@
+// 路由
 import React from 'react';
+import {
+    Route,
+    Switch
+} from 'react-router-dom';
+//路由按需加载
+import loadComponent from './loadable';
 
-import {HashRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
-import Home from '../pages/Home/Home';
-import Page1 from '../pages/Page1/Page1';
-import Counter from '../pages/Counter/Counter';
-import UserInfo from '../pages/UserInfo/UserInfo';
-//创建历史
-const history = createBrowserHistory();
-window.appHistory = history;
+/**
+ * webpackChunkName: webpack按需加在打包时的chunk名字
+ */
 
-const getRouter = () => (
-    <Router history={history}>
-    <div>
-      {/* <ul>
-        <li>
-          <Link to="/">首页</Link>
-        </li>
-        <li>
-          <Link to="/page1">Page1</Link>
-        </li>
-        <li>
-          <Link to="/couter">Counter</Link>
-        </li>
-        <li>
-          <Link to="/userinfo">UserInfo</Link>
-        </li>
-      </ul> */}
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/page1" component={Page1} />
-        <Route path="/couter" component={Counter} />
-        <Route path="/userinfo" component={UserInfo} />
-      </Switch>
-    </div>
-  </Router>
+//首页demo组件
+const Home = loadComponent(() => import(/* webpackChunkName: "home" */ '@container/home/index.component'));
+
+//用户管理
+const UserList = loadComponent(() => import(/* webpackChunkName: "userList" */ '@container/userManager/userList/index.component'));
+const AddUser = loadComponent(() => import(/* webpackChunkName: "addUser" */ '@container/userManager/addUser/index.component'));
+
+//文章管理
+const ArticleList = loadComponent(() => import(/* webpackChunkName: "articleList" */ '@container/articleManager/articleList/index.component'));
+const AddArticle = loadComponent(() => import(/* webpackChunkName: "addArticle" */ '@container/articleManager/addArticle/index.component'));
+
+//404
+const NoMatch = loadComponent(() => import(/* webpackChunkName: "404" */ '@container/error/404.component'));
+
+const Index = () => (
+    <Switch>
+        <Route path='/home' component={Home}/>
+        <Route path='/user/list' component={UserList}/>
+        <Route path='/user/add' component={AddUser}/>
+        <Route path='/article/list' component={ArticleList}/>
+        <Route path='/article/add' component={AddArticle}/>
+        <Route component={NoMatch}/>
+    </Switch>    
 );
-export default getRouter;
+
+export default Index;

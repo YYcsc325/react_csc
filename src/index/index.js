@@ -4,21 +4,47 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import getRouter from './router/router';
-import store from './redux/store';             // 让所有组件都能用store
+import Store from './redux/store';             // 让所有组件都能用store
 import zhCN from 'antd/es/locale/zh_CN';
+import {
+  HashRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from 'react-router-dom'
+import App from './container/App';
+import loadComponent from '@deploy/loadable';
+import { createBrowserHistory } from 'history';
 
+const history = createBrowserHistory();
+//全局路由跳转对象
+window.appHistory = history;
 
-// 1.Provider组件是让所有的组件可以访问到store。不用手动去传。也不用手动去监听。
-// 2.connect函数作用是从 Redux state 树中读取部分数据，并通过 props 来把这些数据提供给要渲染的组件。也传递dispatch(action)函数到props。
-const router = getRouter();
+//登录页面
+const Login = loadComponent(() => import('@container/login/index.component'));
 
+const ProvideRoute = ({component: Component, ...rest}) => {
+  return <Route
+          {...rest}
+          render = {props => {
+              return appStore.isAuthority ?  <Component {...props}/> : <Redirect to={{pathname: '/login'}}/>          
+          }}
+      />
+}
+
+const Index = () => {
+  return <Provider {...Store} locale={ zhCN }>
+      <Router history={history}>
+          <Switch>
+              <Route path='/login' component={Login}/>
+              <ProvideRoute path='/' component={App}/>
+          </Switch>
+      </Router>
+  </Provider>
+}
 
 ReactDOM.render(
-  <Provider 
-    store={ store }
-    locale={ zhCN }
-  >{router}</Provider>,
+  <Index />,
   document.getElementById('root')
 );
 // 还需要在主要的js文件里写入下面这段代码
