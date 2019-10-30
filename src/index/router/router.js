@@ -4,7 +4,7 @@ import {HashRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import Home from '../pages/Home/Home';
 import Page1 from '../pages/Page1/Page1';
-import Counter from '../pages/Counter/view';
+import Counter from '../pages/Counter/Counter';
 import UserInfo from '../pages/UserInfo/UserInfo';
 //创建历史
 const history = createBrowserHistory();

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './index.less';
 // 使Counter能获得到Redux的state，并且能发射action。先来安装react-redux
 
-export default class Counter extends Component {
+class Counter extends Component {
   constructor(props){
     super(props)
     this.state = {
@@ -35,3 +35,4 @@ export default class Counter extends Component {
     )
   }
 }
+export default Counter;
