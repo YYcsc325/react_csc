@@ -6,7 +6,14 @@
     ],
     "plugins": [
         "@babel/plugin-syntax-dynamic-import",  // 动态import
-        "transform-class-properties"            // class Index {} 语法解析
+        "transform-class-properties",           // class Index {} 语法解析
+        [
+            "import", {
+                "libraryName": "antd",
+                "libraryDirectory": "es",
+                "style": true                   // `style: true` 会加载 less 文件
+            }
+        ]
     ]
 }
 // 配置es6 sudo npm install @babel/core @babel/preset-env babel-loader -D
