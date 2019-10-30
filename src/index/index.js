@@ -10,15 +10,11 @@ import store from './redux/store';             // 让所有组件都能用store
 // 2.connect函数作用是从 Redux state 树中读取部分数据，并通过 props 来把这些数据提供给要渲染的组件。也传递dispatch(action)函数到props。
 const router = getRouter();
 
-/* 初始化 */
-renderWithHotReload(router);
 
-function renderWithHotReload(RootElement) {
   ReactDOM.render(
-    <Provider store={store}>{RootElement}</Provider>,
+    <Provider store={store}>{router}</Provider>,
     document.getElementById('root')
   );
-}
 // 还需要在主要的js文件里写入下面这段代码
 if (module.hot) {
   // 实现热更新

@@ -13,7 +13,7 @@ window.appHistory = history;
 const getRouter = () => (
     <Router history={history}>
     <div>
-      <ul>
+      {/* <ul>
         <li>
           <Link to="/">首页</Link>
         </li>
@@ -26,7 +26,7 @@ const getRouter = () => (
         <li>
           <Link to="/userinfo">UserInfo</Link>
         </li>
-      </ul>
+      </ul> */}
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/page1" component={Page1} />
