@@ -1,6 +1,3 @@
-// require('./css/style.css');
-// require('./css/style.less');
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -15,7 +12,6 @@ import {
 import App from './container/App';
 import loadComponent from './router/loadable';
 import { createBrowserHistory } from 'history';
-// import { Button,DatePicker } from 'antd'
 
 const history = createBrowserHistory();
 //全局路由跳转对象
@@ -43,14 +39,7 @@ const Index = () => {
       </Router>
   </Provider>
 }
-// const Show = () => {
-//   return (
-//     <div>
-//       <DatePicker />
-//       <Button>按钮</Button>
-//     </div>
-//   )
-// }
+
 ReactDOM.render(
   <Index />,
   document.getElementById('root')
