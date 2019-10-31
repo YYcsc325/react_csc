@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import './index.less';
-import {inject, observer} from 'mobx-react';
 
-@inject('appStore')
-@observer
 class Index extends Component {
     constructor(props) {
         super(props);
@@ -30,7 +27,7 @@ class Index extends Component {
                 </div>
                 <div className='header-menu'>
                     {
-                        this.props.appStore.globalData.name
+                        // this.props.appStore.globalData.name
                     }
                 </div>
             </div>

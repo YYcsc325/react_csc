@@ -2,7 +2,8 @@ import React from 'react';
 import './App.less';
 import Silder from './main/silder/index.component';
 import Header from './main/header/index.component';
-import RouterComponent from '@deploy/router';
+import RouterComponent from '../router/router';
+import { Button } from 'antd';
 
 const  App = () => {
     return (

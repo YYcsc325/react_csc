@@ -13,7 +13,7 @@ import {
   Redirect
 } from 'react-router-dom'
 import App from './container/App';
-import loadComponent from '@deploy/loadable';
+import loadComponent from './router/loadable';
 import { createBrowserHistory } from 'history';
 
 const history = createBrowserHistory();
@@ -21,19 +21,19 @@ const history = createBrowserHistory();
 window.appHistory = history;
 
 //登录页面
-const Login = loadComponent(() => import('@container/login/index.component'));
+const Login = loadComponent(() => import('./container/login/index.component'));
 
 const ProvideRoute = ({component: Component, ...rest}) => {
   return <Route
           {...rest}
           render = {props => {
-              return appStore.isAuthority ?  <Component {...props}/> : <Redirect to={{pathname: '/login'}}/>          
+              return true ?  <Component {...props}/> : <Redirect to={{pathname: '/login'}}/>          
           }}
       />
 }
 
 const Index = () => {
-  return <Provider {...Store} locale={ zhCN }>
+  return <Provider store={Store} locale={ zhCN }>
       <Router history={history}>
           <Switch>
               <Route path='/login' component={Login}/>

@@ -1,14 +1,9 @@
-import React, { Component } from 'react'
-import './index.less';
-import { Button } from 'antd';
-
-
+import React, { Component } from 'react';
+import {Button} from 'antd';
 class Index extends Component {
     constructor(props) {
-        super(props)
-        this.state = {
-
-        }
+        super(props);
+        this.state={}
     }
 
     componentWillMount() {
@@ -20,6 +15,10 @@ class Index extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
+
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
 
     }
 
@@ -35,23 +34,17 @@ class Index extends Component {
 
     }
 
-    // onLogin = () => {
-        
-    // }
-
     render() {
         return (
-            <div className='login'>
-                登陆页
-                <Button
-                    // onClick={this.onLogin}
-                >
-                    点击登录
-                </Button>
+            <div>
+                render
             </div>
         )
     }
 }
 
+Index.propTypes = {
+
+}
 
 export default Index

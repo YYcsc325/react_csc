@@ -8,22 +8,22 @@ import {
 import loadComponent from './loadable';
 
 /**
- * webpackChunkName: webpack按需加在打包时的chunk名字
+ * webpackChunkName: webpack按需加载打包时的chunk名字
  */
 
 //首页demo组件
-const Home = loadComponent(() => import(/* webpackChunkName: "home" */ '@container/home/index.component'));
+const Home = loadComponent(() => import(/* webpackChunkName: "home" */ '../container/home/index.component'));
 
 //用户管理
-const UserList = loadComponent(() => import(/* webpackChunkName: "userList" */ '@container/userManager/userList/index.component'));
-const AddUser = loadComponent(() => import(/* webpackChunkName: "addUser" */ '@container/userManager/addUser/index.component'));
+const UserList = loadComponent(() => import(/* webpackChunkName: "userList" */ '../container/userManager/userList/index.component'));
+const AddUser = loadComponent(() => import(/* webpackChunkName: "addUser" */ '../container/userManager/addUser/index.component'));
 
 //文章管理
-const ArticleList = loadComponent(() => import(/* webpackChunkName: "articleList" */ '@container/articleManager/articleList/index.component'));
-const AddArticle = loadComponent(() => import(/* webpackChunkName: "addArticle" */ '@container/articleManager/addArticle/index.component'));
+const ArticleList = loadComponent(() => import(/* webpackChunkName: "articleList" */ '../container/articleManager/articleList/index.component'));
+const AddArticle = loadComponent(() => import(/* webpackChunkName: "addArticle" */ '../container/articleManager/addArticle/index.component'));
 
 //404
-const NoMatch = loadComponent(() => import(/* webpackChunkName: "404" */ '@container/error/404.component'));
+const NoMatch = loadComponent(() => import(/* webpackChunkName: "404" */ '../container/error/404.component'));
 
 const Index = () => (
     <Switch>
