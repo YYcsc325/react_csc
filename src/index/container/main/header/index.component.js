@@ -27,7 +27,7 @@ class Index extends Component {
                 </div>
                 <div className='header-menu'>
                     {
-                        // this.props.appStore.globalData.name
+                        '嘻嘻哈哈'
                     }
                 </div>
             </div>

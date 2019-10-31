@@ -15,6 +15,7 @@ import {
 import App from './container/App';
 import loadComponent from './router/loadable';
 import { createBrowserHistory } from 'history';
+// import { Button,DatePicker } from 'antd'
 
 const history = createBrowserHistory();
 //全局路由跳转对象
@@ -33,7 +34,7 @@ const ProvideRoute = ({component: Component, ...rest}) => {
 }
 
 const Index = () => {
-  return <Provider store={Store} locale={ zhCN }>
+  return <Provider store={Store}>
       <Router history={history}>
           <Switch>
               <Route path='/login' component={Login}/>
@@ -42,7 +43,14 @@ const Index = () => {
       </Router>
   </Provider>
 }
-
+// const Show = () => {
+//   return (
+//     <div>
+//       <DatePicker />
+//       <Button>按钮</Button>
+//     </div>
+//   )
+// }
 ReactDOM.render(
   <Index />,
   document.getElementById('root')

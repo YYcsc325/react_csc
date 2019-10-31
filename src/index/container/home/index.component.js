@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import {Button} from 'antd';
+
 class Index extends Component {
     constructor(props) {
         super(props);
-        this.state={}
+        this.state = {
+
+        }
     }
 
     componentWillMount() {
