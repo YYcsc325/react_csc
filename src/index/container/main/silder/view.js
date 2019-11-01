@@ -42,14 +42,14 @@ class Index extends Component {
     //     } )
     // }
     showMenu = ( obj ) => {
-        const { key, icon, } = obj;
+        const { key, icon, title} = obj;
         return (
             <SubMenu
                 key={key}
                 title={
                 <span>
                     <Icon type={icon} />
-                    {obj.title}
+                    {title}
                 </span>
                 }
             >

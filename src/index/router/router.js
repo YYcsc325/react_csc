@@ -15,12 +15,12 @@ import loadComponent from './loadable';
 const Home = loadComponent(() => import(/* webpackChunkName: "home" */ '../container/home/index.component'));
 
 //用户管理
-const UserList = loadComponent(() => import(/* webpackChunkName: "userList" */ '../container/userManager/userList/index.component'));
-const AddUser = loadComponent(() => import(/* webpackChunkName: "addUser" */ '../container/userManager/addUser/index.component'));
+const UserList = loadComponent(() => import(/* webpackChunkName: "userList" */ '../container/userManager/userList/index'));
+const AddUser = loadComponent(() => import(/* webpackChunkName: "addUser" */ '../container/userManager/addUser/index'));
 
 //文章管理
-const ArticleList = loadComponent(() => import(/* webpackChunkName: "articleList" */ '../container/articleManager/articleList/index.component'));
-const AddArticle = loadComponent(() => import(/* webpackChunkName: "addArticle" */ '../container/articleManager/addArticle/index.component'));
+const ArticleList = loadComponent(() => import(/* webpackChunkName: "articleList" */ '../container/articleManager/articleList/index'));
+const AddArticle = loadComponent(() => import(/* webpackChunkName: "addArticle" */ '../container/articleManager/addArticle/index'));
 
 //404
 const NoMatch = loadComponent(() => import(/* webpackChunkName: "404" */ '../container/error/404.component'));
