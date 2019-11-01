@@ -1,9 +1,9 @@
 import React from 'react';
-import './App.less';
-import Silder from './main/silder/index.component';
-import Header from './main/header/index.component';
+import Silder from './main/silder/index';
+import Header from './main/header/index';
 import Content from './main/content/index'
 import { Layout } from 'antd';
+import './App.less';
 
 function App(){
     return (

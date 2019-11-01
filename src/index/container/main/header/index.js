@@ -1,15 +1,16 @@
 import { connect } from 'react-redux';
-import { getUserInfo } from '../../redux/actions/userInfo';
-import PageView from './view'
+import PageView from './index.component'
+// state为全局的state，return 出的这个对象会跟当前的this.prop进行合并，注入到当前props中
+
 const mapStateToProps = (state, props) => {
   return {
-    userInfo: state.userInfo
   };
 };
 const mapDispatchToProps = (dispatch, props) => {
-    return {};
+  return {
+  };
 };
-
+  
 export default connect(
   mapStateToProps,
   mapDispatchToProps

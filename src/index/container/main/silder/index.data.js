@@ -17,19 +17,35 @@ const menuData = [
         ]
     },
     {
-        title: '文章管理',
+        title: '个人中心',
         key: '02',
-        icon: 'file',
+        icon: 'laptop',
         children: [
             {
-                title: '文章列表',
+                title: '个人处理',
                 key: '02-01',
                 url: '/article/list'
             },
             {
-                title: '发布文章',
+                title: '个人相册',
                 key: '02-02',
                 url: '/article/add'
+            }
+        ]
+    },{
+        title: '异常处理',
+        key: '03',
+        icon: 'notification',
+        children: [
+            {
+                title: '日志报错',
+                key: '03-01',
+                url: '/home'
+            },
+            {
+                title: '收件邮箱',
+                key: '03-02',
+                url: '/home'
             }
         ]
     }
