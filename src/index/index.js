@@ -14,6 +14,8 @@ import loadComponent from './router/loadable';
 import { createBrowserHistory } from 'history';
 
 const history = createBrowserHistory();
+const loginState = Store.getState();
+const { login: { login } } = loginState;
 //全局路由跳转对象
 window.appHistory = history;
 
@@ -24,7 +26,7 @@ const ProvideRoute = ({component: Component, ...rest}) => {
   return <Route
           {...rest}
           render = {props => {
-              return true ?  <Component {...props}/> : <Redirect to={{pathname: '/login'}}/>          
+              return login ?  <Component {...props}/> : <Redirect to={{pathname: '/login'}}/>          
           }}
       />
 }

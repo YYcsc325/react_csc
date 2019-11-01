@@ -5,7 +5,7 @@
 import { combineReducers } from 'redux';
 import counter from './reducers/couter';
 import userInfo from './reducers/userInfo';
-
+import login from './reducers/login'
 // export default function combineReducers( state = {}, action ) {
 //     return {
 //         counter: counter( state.counter, action ),
@@ -15,4 +15,5 @@ import userInfo from './reducers/userInfo';
 export default combineReducers({
     counter,
     userInfo,
+    login
 })
