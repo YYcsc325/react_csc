@@ -12,7 +12,7 @@ import loadComponent from './loadable';
  */
 
 //首页demo组件
-const Home = loadComponent(() => import(/* webpackChunkName: "home" */ '../container/home/index.component'));
+const Home = loadComponent(() => import(/* webpackChunkName: "home" */ '../container/home/index'));
 
 //用户管理
 const UserList = loadComponent(() => import(/* webpackChunkName: "userList" */ '../container/userManager/userList/index'));

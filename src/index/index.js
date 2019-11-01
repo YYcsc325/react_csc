@@ -18,7 +18,7 @@ const history = createBrowserHistory();
 window.appHistory = history;
 
 //登录页面
-const Login = loadComponent(() => import('./container/login/index.component'));
+const Login = loadComponent(() => import('./container/login/index'));
 
 const ProvideRoute = ({component: Component, ...rest}) => {
   return <Route
