@@ -14,7 +14,7 @@ export default function reducer(state = initState, action) {
   switch (action.type) {
     case INCREMENT:
       return {
-        count: state.count + 1,     // 改变当前state中的count
+        count: state.count + 1,     // 替换当前的state
       };
     case DECREMENT:
       return {
