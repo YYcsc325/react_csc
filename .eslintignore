@@ -1,0 +1,6 @@
+test/fixtures
+coverage/
+dist/
+node_modules/
+mock/
+config/

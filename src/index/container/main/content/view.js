@@ -8,7 +8,7 @@ class ContentList extends Component {
   constructor(props){
     super(props)
     this.state = {
-      count: ''
+      
     }
   }
   render() {

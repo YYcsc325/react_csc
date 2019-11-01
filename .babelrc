@@ -16,5 +16,5 @@
         ]
     ]
 }
-// 配置es6 sudo npm install @babel/core @babel/preset-env babel-loader -D
-// 配置jsx sudo npm install react react-dom @babel/preset-react -D
+// 配置es6 npm install @babel/core @babel/preset-env babel-loader -D
+// 配置jsx npm install react react-dom @babel/preset-react -D

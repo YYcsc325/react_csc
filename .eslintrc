@@ -1,0 +1,15 @@
+{
+    "globals": {
+      "location": true,
+      "window": true,
+      "DDLogin": true,
+      "React": true,
+      "Tooltip": true
+    },
+    "parserOptions": {
+      "ecmaFeatures": {
+        "legacyDecorators": true
+      }
+    }
+  }
+  
