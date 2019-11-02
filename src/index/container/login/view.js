@@ -11,27 +11,7 @@ class Index extends Component {
         }
     }
 
-    componentWillMount() {
-
-    }
-
     componentDidMount() {
-
-    }
-
-    componentWillReceiveProps(nextProps) {
-
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-
-    }
-
-    componentWillUnmount() {
 
     }
 
@@ -39,7 +19,6 @@ class Index extends Component {
         if(bol){
             this.props.history.push('/home')
         }else{
-            console.log('aaaa')
             notification.open({
                 message: '消息提示框',
                 description:
@@ -52,7 +31,7 @@ class Index extends Component {
         
     }
     render() {
-        const { login } = this.props;
+        const { userLogin } = this.props;
         return (
             <div className='login'>
                 <Button 
@@ -65,7 +44,7 @@ class Index extends Component {
                 </Button>
                 <Button
                   type="primary"
-                  onClick={()=>{this.onLogin(login)}}
+                  onClick={()=>{this.onLogin(userLogin)}}
                 >
                     点击跳转
                 </Button>

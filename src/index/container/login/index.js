@@ -8,9 +8,9 @@ const login = ( payload = {} ) => {
   }
 }
 const mapStateToProps = (state, props) => {
-  const { login: { login } } = state;
+  const { login: { userLogin } } = state;
   return {
-    login
+    userLogin
   };
 };
 const mapDispatchToProps = (dispatch, props) => {

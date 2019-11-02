@@ -4,7 +4,7 @@ import { LOGIN } from '../actions/login';
 * 初始化state
 */
 const initState = {
-  login: false,
+  userLogin: false,
 };
 
 /*
@@ -15,7 +15,8 @@ export default function reducer(state = initState, action) {
   switch (action.type) {
     case LOGIN:
       return {
-        login: payload.login,     // 替换当前的state
+        ...state,
+        userLogin: payload.login,     // 替换当前的state
       };
     default:
       return state;
