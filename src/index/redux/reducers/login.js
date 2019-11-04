@@ -12,7 +12,6 @@ const initState = {
 */
 export default function reducer(state = initState, action) {
   const { payload } = action;
-  console.log(action, 'action')
   switch (action.type) {
     case LOGIN:
       return {

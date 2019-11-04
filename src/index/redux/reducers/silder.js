@@ -4,7 +4,9 @@ import { CHECKEDLINK } from '../actions/action';
 * 初始化state
 */
 const initState = {
-  menuCheck: {},
+  menuCheck: {
+    data: ['用户管理', '用户列表']   // 应该从原始数据中去获取
+  },
 };
 
 /*
@@ -12,7 +14,6 @@ const initState = {
 */
 export default function reducer(state = initState, action) {
   const { payload } = action;
-  console.log(payload, 'payload')
   switch (action.type) {
     case CHECKEDLINK:
       return {

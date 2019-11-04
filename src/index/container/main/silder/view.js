@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import './index.less';
 import { Link } from 'react-router-dom';
 import MenuData from '../../../mock/silder';
+import { getTreeNode } from '../../../utils/getTreeNode'
 import { Layout, Menu, Icon } from 'antd';
+import './index.less';
+
 
 const { SubMenu } = Menu;
 const { Sider } = Layout;
@@ -41,6 +43,12 @@ class Index extends Component {
     //         return <Menu.Item key={item.key}><Link to={item.url}>{item.title}</Link></Menu.Item>
     //     } )
     // }
+    checked = ( key ) => {
+        let res = getTreeNode(MenuData, [], key);
+        this.props.checkedLink({
+            data: res
+        });
+    }
     showMenu = ( obj ) => {
         const { key, icon, title} = obj;
         return (
@@ -54,7 +62,7 @@ class Index extends Component {
                 }
             >
                 {
-                    obj.children.map(item => (<Menu.Item key={item.key}><Link to={item.url} onClick={()=>{this.props.checkedLink(item)}}>{item.title}</Link></Menu.Item>))
+                    obj.children.map(item => (<Menu.Item key={item.key}><Link to={item.url} onClick={()=>{this.checked(item.key)}}>{item.title}</Link></Menu.Item>))
                 }
             </SubMenu>
         )

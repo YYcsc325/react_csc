@@ -4,7 +4,7 @@
  */
 import debounce from './debounce.js';
 import arr from './arr.js';
-import localMessage from './localMessage.js'
+import localMessage from './localMessage.js';
 export {
     debounce,
     arr,
