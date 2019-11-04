@@ -1,10 +1,10 @@
-import { LOGIN } from '../actions/action';
+import { CHECKEDLINK } from '../actions/action';
 
 /*
 * 初始化state
 */
 const initState = {
-  userLogin: false,
+  menuCheck: {},
 };
 
 /*
@@ -12,12 +12,12 @@ const initState = {
 */
 export default function reducer(state = initState, action) {
   const { payload } = action;
-  console.log(action, 'action')
+  console.log(payload, 'payload')
   switch (action.type) {
-    case LOGIN:
+    case CHECKEDLINK:
       return {
         ...state,
-        userLogin: payload.login,     // 替换当前的state
+        menuCheck: payload,     // 替换当前的state
       };
     default:
       return state;

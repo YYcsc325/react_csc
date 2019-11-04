@@ -1,7 +1,7 @@
 /**
  * @name Loading效果
  */
-import React, { Component, Fragment } from '@alipay/bigfish/react';
+import React, { Component } from 'react'
 import './index.less';
 
 class Index extends Component {

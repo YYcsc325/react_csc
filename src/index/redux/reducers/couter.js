@@ -1,4 +1,4 @@
-import { INCREMENT, DECREMENT, RESET } from '../actions/couter';
+import { INCREMENT, DECREMENT, RESET } from '../actions/action';
 
 /*
 * 初始化state

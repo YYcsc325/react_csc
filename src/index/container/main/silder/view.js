@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.less';
 import { Link } from 'react-router-dom';
-import MenuData from './index.data';
+import MenuData from '../../../mock/silder';
 import { Layout, Menu, Icon } from 'antd';
 
 const { SubMenu } = Menu;
@@ -54,7 +54,7 @@ class Index extends Component {
                 }
             >
                 {
-                    obj.children.map(item => (<Menu.Item key={item.key}><Link to={item.url}>{item.title}</Link></Menu.Item>))
+                    obj.children.map(item => (<Menu.Item key={item.key}><Link to={item.url} onClick={()=>{this.props.checkedLink(item)}}>{item.title}</Link></Menu.Item>))
                 }
             </SubMenu>
         )

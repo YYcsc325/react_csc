@@ -1,5 +1,5 @@
-import LoadComponent from '../component/Loading/index';
-import React from '@alipay/bigfish/react';
+import LoadComponent from './index';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
 function loading(){
