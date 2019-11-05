@@ -13,7 +13,7 @@ class Index extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            // openKeys: ['01-01']
+            openKeys: ['01']
         }
     }
 
@@ -43,8 +43,8 @@ class Index extends Component {
     //         return <Menu.Item key={item.key}><Link to={item.url}>{item.title}</Link></Menu.Item>
     //     } )
     // }
-    checked = ( key ) => {
-        let res = getTreeNode(MenuData, [], key);
+    checked = ( item ) => {
+        let res = getTreeNode(MenuData, [], item.key);
         this.props.checkedLink({
             data: res
         });
@@ -62,7 +62,7 @@ class Index extends Component {
                 }
             >
                 {
-                    obj.children.map(item => (<Menu.Item key={item.key}><Link to={item.url} onClick={()=>{this.checked(item.key)}}>{item.title}</Link></Menu.Item>))
+                    obj.children.map(item => (<Menu.Item key={item.key}><Link to={item.url}>{item.title}</Link></Menu.Item>))
                 }
             </SubMenu>
         )
@@ -78,15 +78,16 @@ class Index extends Component {
     componentWillUnmount() {
 
     }
-
     render() {
         return (
             <Sider width={200} style={{ background: '#fff' }}>
                 <Menu
                   mode="inline"
+                  theme='dark'
                   defaultSelectedKeys={['1']}
-                  defaultOpenKeys={['01']}
+                  defaultOpenKeys={this.state.openKeys}
                   style={{ height: '100%', borderRight: 0 }}
+                  onSelect={this.checked}
                 >
                     {
                         MenuData.map(item => this.showMenu(item))
