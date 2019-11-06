@@ -17,32 +17,18 @@ class Index extends Component {
         }
     }
 
-    // rootSubmenuKeys = ['01', '02']
+    rootSubmenuKeys = ['01', '02', '03']
 
-    // onOpenChange = (openKeys) => {
-    //     const latestOpenKey = openKeys.find(key => this.state.openKeys.indexOf(key) === -1);
-    //     if (this.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
-    //         this.setState({ openKeys });
-    //     } else {
-    //         this.setState({
-    //             openKeys: latestOpenKey ? [latestOpenKey] : [],
-    //         });
-    //     }
-    // }
-
-    // renderMenu = (arr) => {
-    //     return arr.map( item => {
-    //         return <SubMenu key={item.key} title={<span><Icon type={item.icon} /><span>{item.title}</span></span>}>
-    //                 {item.children && this.renderChildMenu(item.children)}
-    //             </SubMenu>
-    //     })
-    // }
-
-    // renderChildMenu = (arr) => {
-    //     return arr.map( item => {
-    //         return <Menu.Item key={item.key}><Link to={item.url}>{item.title}</Link></Menu.Item>
-    //     } )
-    // }
+    onOpenChange = (openKeys) => {
+        const latestOpenKey = openKeys.find(key => this.state.openKeys.indexOf(key) === -1);
+        if (this.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
+            this.setState({ openKeys });
+        } else {
+            this.setState({
+                openKeys: latestOpenKey ? [latestOpenKey] : [],
+            });
+        }
+    }
     checked = ( item ) => {
         let res = getTreeNode(MenuData, [], item.key);
         this.props.checkedLink({
@@ -67,15 +53,7 @@ class Index extends Component {
             </SubMenu>
         )
     }
-    componentWillMount() {
-
-    }
-
     componentDidMount() {
-
-    }
-
-    componentWillUnmount() {
 
     }
     render() {
@@ -84,10 +62,11 @@ class Index extends Component {
                 <Menu
                   mode="inline"
                   theme='dark'
-                  defaultSelectedKeys={['1']}
-                  defaultOpenKeys={this.state.openKeys}
+                //   defaultOpenKeys={this.state.openKeys}
                   style={{ height: '100%', borderRight: 0 }}
                   onSelect={this.checked}
+                  onOpenChange={this.onOpenChange}
+                  openKeys={this.state.openKeys}
                 >
                     {
                         MenuData.map(item => this.showMenu(item))
