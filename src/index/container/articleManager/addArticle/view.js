@@ -1,45 +1,38 @@
-import React, { Component } from 'react'
-
+import React, { Component } from 'react';
+import { Input } from 'antd';
+import { debounce } from '../../../utils/indexAll'
 class Index extends Component {
     constructor(props) {
         super(props)
+        this.getName = debounce.debounce(this.getName, 1000)
         this.state = {
 
         }
     }
 
-    componentWillMount() {
-
-    }
-
     componentDidMount() {
 
     }
-
-    componentWillReceiveProps(nextProps) {
-
+    getName = (target) => {
+        let text = /^[1-9]\d*$/;
+        if (!target || !text.test(target)) {
+            console.log('输入有误')
+        }
+        if (text.test(target)) {
+            console.log(target, 'target')
+            console.log('输入成功')
+        }
     }
-
-    shouldComponentUpdate(nextProps, nextState) {
-
+    onChange = ( e ) => { 
+        let target = e.target.value;
+        this.getName(target);
     }
-
-    componentWillUpdate(nextProps, nextState) {
-
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-
-    }
-
-    componentWillUnmount() {
-
-    }
-
     render() {
         return (
             <div>
-                发布文章
+                请输入: <Input 
+                    onChange = { this.onChange }
+                />
             </div>
         )
     }
