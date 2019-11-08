@@ -1,46 +1,31 @@
 import React, { Component } from 'react'
-
+import { Input } from 'antd';
+import { debounce } from '../../../utils/indexAll'
 class Index extends Component {
     constructor(props) {
         super(props)
+        this.onChange = debounce.debounce(this.onChange,50)
         this.state = {
 
         }
-    }
-
-    componentWillMount() {
-
     }
 
     componentDidMount() {
 
     }
 
-    componentWillReceiveProps(nextProps) {
-
+    onChange = (e) => {
+        console.log(e.target.value)
+        if(e.target.value){
+            this.props.getTarget();
+        }
     }
-
-    shouldComponentUpdate(nextProps, nextState) {
-
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-
-    }
-
-    componentWillUnmount() {
-
-    }
-
     render() {
         return (
-            <div>
-                发布文章
-            </div>
+            <Input
+                style={{width: '200px'}}
+                onChange = { this.onChange }
+            />
         )
     }
 }
