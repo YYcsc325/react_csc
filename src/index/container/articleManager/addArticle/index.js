@@ -8,6 +8,9 @@ const mapStateToProps = (state, props) => {
 };
 const mapDispatchToProps = (dispatch, props) => {
   return {
+    getTarget(){
+      console.log('asdasdasd');
+    }
   };
 };
   

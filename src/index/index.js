@@ -8,7 +8,7 @@ import {
   Route,
   Switch,
   Redirect
-} from 'react-router-dom'
+} from 'react-router-dom';
 import App from './container/App';
 import loadComponent from './router/loadable';
 import { createBrowserHistory } from 'history';
