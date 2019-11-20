@@ -7,7 +7,9 @@ const Example = () => {
   useEffect(() => {
     // Update the document title using the browser API
     document.title = `You clicked ${count} times`;
-  });
+    // 还能return 一个 function , 相当于unmount，触发这个函数，清楚外部调用的数据
+    // return () => {  ...代码逻辑 }   
+  },[count]);     // 优化去对比count有无变化,变化执行effect
 
   return (
     <div>
