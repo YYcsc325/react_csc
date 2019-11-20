@@ -17,7 +17,7 @@ class ContentList extends Component {
         <Layout style={{ padding: '0 24px 24px' }}>
           <Breadcrumb style={{ margin: '16px 0' }}>
           {
-            menuCheck.map(item=><Breadcrumb.Item>{item}</Breadcrumb.Item>)
+            menuCheck.map((item,index)=><Breadcrumb.Item key={index}>{item}</Breadcrumb.Item>)
           }
           </Breadcrumb>
           <Content
