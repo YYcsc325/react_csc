@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import HockComponent from './hockComponents/view.js'
+import HockComponent2 from './hockComponents/view2.js'
 class Index extends Component {
     constructor(props) {
         super(props);
@@ -7,39 +8,12 @@ class Index extends Component {
 
         }
     }
-
-    componentWillMount() {
-
-    }
-
-    componentDidMount() {
-
-    }
-
-    componentWillReceiveProps(nextProps) {
-
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-
-    }
-
-    componentWillUnmount() {
-
-    }
-
     render() {
         return (
             <div>
-                render
+                <span>render</span>
+                <HockComponent />
+                <HockComponent2 />
             </div>
         )
     }
