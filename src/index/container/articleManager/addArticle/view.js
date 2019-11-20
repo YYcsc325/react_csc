@@ -10,7 +10,7 @@ class Index extends Component {
         }
     }
 
-    componentDidMount() {
+    componentDidMount() {   
 
     }
     getName = (target) => {
