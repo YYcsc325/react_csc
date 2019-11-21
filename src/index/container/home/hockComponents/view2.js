@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo} from 'react';
 
 const Example = () => {
   const [count, setCount] = useState(0);
@@ -11,12 +11,27 @@ const Example = () => {
     // return () => {  ...代码逻辑 }   
   },[count]);     // 优化去对比count有无变化,变化执行effect
 
+  const memoizedCallback = useCallback(        // 该回调记忆函数仅在某个依赖项改变时才会更新
+    () => {
+        setCount(count - 1);
+    },
+    [count],
+  );
+
+  const computeExpensiveValue = (count) => {   // 只要count改变就会走这个函数
+      return count * 2 + '我是计算过之后的值'
+  }
+  const memoizedValue = useMemo(() => computeExpensiveValue(count), [count]);
+
   return (
     <div>
-      <p>You clicked {count} times</p>
+      <p>You clicked { memoizedValue } times</p>
       <button onClick={() => setCount(count + 1)}>
         Click me
       </button>
+      <br/>
+      <br/>
+      <button onClick={()=>{memoizedCallback()}}>memoizedCallback</button>
     </div>
   );
 }
