@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo} from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 
 const Example = () => {
   const [count, setCount] = useState(0);
@@ -19,7 +19,7 @@ const Example = () => {
   );
 
   const computeExpensiveValue = (count) => {   // 只要count改变就会走这个函数
-      return count * 2 + '我是计算过之后的值'
+      return count * 2 + '我是计算过之后的值'     // 不改变state中的值
   }
   const memoizedValue = useMemo(() => computeExpensiveValue(count), [count]);
 
