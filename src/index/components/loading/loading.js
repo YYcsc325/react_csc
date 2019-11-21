@@ -1,23 +1,16 @@
 import LoadComponent from './index';
-import React from 'react';
+import React from '@alipay/bigfish/react';
 import ReactDOM from 'react-dom';
+// import * as ReactDOM from 'react-dom';
 
-function loading(){
-    const div = document.createElement('div');
-    document.body.appendChild(div);
-    const ref = React.createRef();
-    ReactDOM.render(<LoadComponent ref={ref}/>,div);
-    return {
-        showLoading(isShowLoading = true){
-            if(isShowLoading){
-                return ref.current.showLoading();
-            }else{
-                return null
-            }
-        },
-        hideLoading(){
-            return ref.current.hideLoading();
-        }
-    }    
+function loading() {
+  const div = document.createElement('div');
+  document.body.appendChild(div);
+  const ref = React.createRef();
+  ReactDOM.render(<LoadComponent ref={ref} />, div);
+  return {
+    showLoading: ref.current.showLoading,
+    hideLoading: ref.current.hideLoading,
+  };
 }
 export default new loading();
