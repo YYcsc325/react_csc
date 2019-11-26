@@ -49,3 +49,45 @@ if (module.hot) {
   // 实现热更新
   module.hot.accept();
 }
+
+/**
+ * @name Ts
+ */
+
+ // 元祖类型
+//  let yuanzu : [string, number] = ['123123',1231232];      // 这种写法是定义变量的
+//  console.log(yuanzu,'yuanzu')
+ 
+//  // 枚举
+//  enum Test {
+//      one = 1,    // 属性从1开始
+//      two,
+//      three,
+//      four
+//  }
+//  console.log(Test,'Test')
+ 
+//  // 泛型  T自动捕获传入的T变量类型，传出也是T这个类型
+//  function identity<T>(arg: T[]): T[] {  
+//      console.log(arg, 'arg');
+//      return arg;
+//  }
+//  identity([{
+//      name: '12314'
+//  }])
+//  interface Person {       // 至少传这两个  interface是定义接口的
+//      firstName: string;   
+//      lastName: boolean;
+//  }
+//  // Person[] === 泛型写法 Array<Person>
+//  function actionP (person: Array<Person>): void {
+//      console.log(person)
+//  }
+ 
+//  let mesP = [{
+//      firstName: 'cenhaha',
+//      lastName: false,
+//      age: 1233
+//  }]
+ 
+//  actionP(mesP);
