@@ -1,5 +1,5 @@
 /**
- * @name formView 
+ * @name FormView 
  * @auth censhichao
  * @desc 渲染form的数据
  */
