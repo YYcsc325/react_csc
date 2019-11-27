@@ -3,7 +3,7 @@ import { Button } from 'antd';
 import { getParams, getQuery, post } from '../../../serve/method.js'
 import API from '../../../serve/API'
 
-const { userListName, userListName2, userListName3 } = API;
+const { cartFour, cartFive, cartSix } = API;
 class Index extends Component {
     constructor(props) {
         super(props)
@@ -14,10 +14,11 @@ class Index extends Component {
         }
     }
     getOption = async() => {
-        let res = await getParams(userListName, 123);
+        let res = await getParams(cartFour, 123);
         if(res){
+            const { url } = res.data;
             this.setState({
-                name: res.data
+                name: url
             })
         }
     }
@@ -25,7 +26,7 @@ class Index extends Component {
         let obj = {
             id: 123
         }
-        let res = await getQuery(userListName2, obj);
+        let res = await getQuery(cartFive, obj);
         if(res){
             this.setState({
                 name2: res.data
@@ -36,7 +37,7 @@ class Index extends Component {
         let obj = {
             id: 123
         }
-        let res = await post(userListName3, obj)
+        let res = await post(cartSix, obj)
         if(res && res.data.status == '0'){
             const { result } = res.data;
             this.setState({
