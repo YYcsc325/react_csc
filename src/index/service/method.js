@@ -1,10 +1,11 @@
 import axios from 'axios'
+const doMain = 'http://127.0.0.1:3000'
 class Index {
-    getUrl = (url) => {
+    getParams = (url, params) => {
         return new Promise((resolve,reject)=>{
             axios({
                 method:"get",
-                url:`${url}/login`
+                url: `${doMain}${url}${params}`
             }).then(data=>{
                 resolve(data)
             }).catch(err=>{
@@ -12,12 +13,12 @@ class Index {
             })
         })
     }
-    getParams = (url,params) => {
+    getQuery = (url,query) => {
         return new Promise((resolve,reject)=>{
             axios({
                 method:"get",
-                url:url,
-                params:params
+                url:`${doMain}${url}`,
+                params:query
             }).then(data=>{
                 resolve(data)
             }).catch(err=>{
@@ -25,11 +26,11 @@ class Index {
             })
         })
     }
-    post = (url,params) => {
+    post = (url, params) => {
         return new Promise((resolve,reject)=>{
             axios({
                 method:"post",
-                url:url,
+                url:`${doMain}${url}`,
                 data:params
             }).then(data=>{
                 resolve(data)
