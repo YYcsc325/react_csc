@@ -3,9 +3,12 @@
  */
 import server from './server.js'
 
-export function getData(path){
-   return server['getParams'](path);
+export function getParams(url, params){
+   return server['getParams'](url, params);
 }
-export function postData(path,params){
-   return server['post'](path,params);
+export function getQuery(url, query){
+   return server['getQuery'](url, query)
+} 
+export function post(url, params){
+   return server['post'](url, params);
 }
