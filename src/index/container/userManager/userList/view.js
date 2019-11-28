@@ -16,8 +16,9 @@ class Index extends Component {
     getOption = async() => {
         let res = await getParams(cartFour, 123);
         if(res){
+            const { url } = res.data;
             this.setState({
-                name: res.data
+                name: url
             })
         }
     }
