@@ -3,8 +3,8 @@
  * @auth censhichao
  * @desc 渲染form的数据
  */
-import { Component, Fragment } from 'react';
- import { Button, Select, Form } from 'antd'; 
+import React, { Component, Fragment } from 'react';
+import { Button, Select, Form, Input } from 'antd'; 
 
  const Option = Select.Option;
  const FormItem = Form.Item;
@@ -28,13 +28,13 @@ import { Component, Fragment } from 'react';
          }
      }
      render(){
-         const { config, className} = this.props;
+         const { config, className, form } = this.props;
          const { getFieldDecorator } = form;
          const mayLayOut = {
              // 自定义渲染
              custom: (item, newFormItemLayout) => {
                  const { render:_render, style, className, label } = item;
-                 const _render = item.render;
+                 
                  return (
                     <FormItem
                       style={style}
@@ -51,7 +51,7 @@ import { Component, Fragment } from 'react';
                  )
              },
              input: (item, newFormItemLayout) => {
-                 const { onChange, width, placeholder, disabled, rules, initialValue, key } = item;
+                 const { onChange, width, placeholder, disabled, rules, initialValue, key, label } = item;
                  return (
                     <FormItem
                       label={label}
@@ -72,7 +72,7 @@ import { Component, Fragment } from 'react';
                  )
              },
              select: (item, newFormItemLayout) => {
-                 const { options = [], onchange, key, rules, label } = item;
+                 const { options = [], onchange, key, rules, label, initialValue, placeholder, disabled } = item;
                  return (
                     <FormItem
                       label={label}
@@ -80,10 +80,12 @@ import { Component, Fragment } from 'react';
                     >
                         {getFieldDecorator(key,{
                             rules: rules,
-                            initialValue: '123',
+                            initialValue: initialValue,
                         })(
                             <Select
                                onchange={onchange}
+                               placeholder={placeholder}
+                               disabled={disabled}
                             >
                                {
                                  options.map(items => (<Option key={items.key}>{items.value}</Option>))
@@ -98,7 +100,7 @@ import { Component, Fragment } from 'react';
          return (
              <div className={className}>
                  {
-                     config.map(item => {
+                     config.map((item,index) => {
 
                         const newFormItemLayout = { ...formItemLayout, ...(item.formItemLayout || {}) };
 
@@ -114,7 +116,7 @@ import { Component, Fragment } from 'react';
                             });
                         }
 
-                        let content = mayLayOut[item.key] && mayLayOut[item.key](item, newFormItemLayout)
+                        let content = mayLayOut[item.type] && mayLayOut[item.type](item, newFormItemLayout)
                         return <Fragment key={index}>{content}</Fragment>;
                      })
                  }
