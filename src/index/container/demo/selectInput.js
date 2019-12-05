@@ -1,7 +1,8 @@
 /**
- * @name selectInput
- * @param { props }
- * @auth  censhichao
+ * @name   SelectInput
+ * @param  { * } FN
+ * @Auth   CENSHICHAO -- A
+ * @return <Component>
  */
 import React from 'react';
 import { Select, Input } from 'antd'; 
@@ -17,8 +18,7 @@ const Option = Select.Option;
             disabled={disabled}
             value={value.valueDateOne}
             onChange={(e)=>{
-                console.log(e)
-                onChange({
+                onChange({  // 从新写入form表单
                     ...value,
                     valueDateOne: e
                 })

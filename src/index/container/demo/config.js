@@ -26,7 +26,10 @@ export function getConfig(props){
         [
             {
                 ...baseConfig.input,
-                disabled: true
+                disabled: false,
+                onChange: (e) => {
+                    this.onChange(e)
+                }
             }   
         ]
     ).concat(
