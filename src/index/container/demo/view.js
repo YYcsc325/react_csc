@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form } from 'antd';
+import { Form, Button } from 'antd';
 import FormView from '../../components/Form/formView.js'
 import { getConfig } from './config.js';
 import { debounce } from '../../utils/indexAll'
@@ -25,7 +25,14 @@ class Index extends Component {
         let target = e.target.value;
         this.getName(target);
     }
-
+    handleSubmit = () => {
+        const { form } = this.props;
+        form.validateFields((err, values)=>{
+            if(!err){
+                this.props.handleValue(values);
+            }
+        })
+    }
     render() {
         const config = getConfig.call(this);
         const { form } = this.props;
@@ -33,9 +40,10 @@ class Index extends Component {
             <div>
                 <FormView 
                     config={config}
-                    className={'cl'}
+                    className={'csc'}
                     form={form}
                 />
+                <Button onClick={this.handleSubmit}>点击提交</Button>
             </div>
         )
     }

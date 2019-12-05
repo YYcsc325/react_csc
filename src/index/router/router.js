@@ -23,7 +23,7 @@ const ArticleList = loadComponent(() => import(/* webpackChunkName: "articleList
 const AddArticle = loadComponent(() => import(/* webpackChunkName: "addArticle" */ '../container/articleManager/addArticle/index'));
 
 // demo
-const Demo = loadComponent(() => import(/* webpackChunkName: "demo" */ '../container/demo/view'))
+const Demo = loadComponent(() => import(/* webpackChunkName: "demo" */ '../container/demo/index'))
 
 //404
 const NoMatch = loadComponent(() => import(/* webpackChunkName: "404" */ '../container/error/404.component'));
