@@ -48,8 +48,6 @@ export function getBaseConfig(props){
                 })(
                     <SelectInput 
                         options={options}
-                        // valueDateOne={valueDateOne}
-                        // valueDataTwo={valueDataTwo}
                         disabled={disabled || false}
                         onChange={(value)=>{
                             console.log(value)

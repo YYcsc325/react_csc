@@ -22,8 +22,12 @@ const AddUser = loadComponent(() => import(/* webpackChunkName: "addUser" */ '..
 const ArticleList = loadComponent(() => import(/* webpackChunkName: "articleList" */ '../container/articleManager/articleList/index'));
 const AddArticle = loadComponent(() => import(/* webpackChunkName: "addArticle" */ '../container/articleManager/addArticle/index'));
 
+// demo
+const Demo = loadComponent(() => import(/* webpackChunkName: "demo" */ '../container/demo/view'))
+
 //404
 const NoMatch = loadComponent(() => import(/* webpackChunkName: "404" */ '../container/error/404.component'));
+
 
 const Index = () => (
     <Switch>
@@ -32,6 +36,7 @@ const Index = () => (
         <Route path='/user/add' component={AddUser}/>
         <Route path='/article/list' component={ArticleList}/>
         <Route path='/article/add' component={AddArticle}/>
+        <Route path='/demo' component={Demo}/>
         <Route component={NoMatch}/>
     </Switch>    
 );

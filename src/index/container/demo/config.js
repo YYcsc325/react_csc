@@ -1,7 +1,7 @@
 /**
  * @name 配置文件
  */
-import { getBaseConfig } from '../baseConfig.js'
+import { getBaseConfig } from './baseConfig.js'
 import React from 'react';
 
 export function getConfig(props){
@@ -49,6 +49,8 @@ export function getConfig(props){
                         value: '222'
                     }
                 ],
+                valueDateOne: '111',
+                valueDataTwo: '111'
             }
         ]
     )
