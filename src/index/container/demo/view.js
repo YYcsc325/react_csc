@@ -3,12 +3,13 @@ import { Form, Button } from 'antd';
 import FormView from '../../components/Form/formView.js'
 import { getConfig } from './config.js';
 import { debounce } from '../../utils/indexAll'
+import StaticModal from '../../components/staticModal/view'
 class Index extends Component {
     constructor(props) {
         super(props)
         this.getName = debounce.debounce(this.getName, 1000)
         this.state = {
-
+            visible: false
         }
     }
     getName = (target) => {
@@ -33,6 +34,16 @@ class Index extends Component {
             }
         })
     }
+    openModal = () => {
+        this.setState({
+            visible: true
+        })
+    }
+    checkModal = () => {
+        this.setState({
+            visible: false
+        })
+    }
     render() {
         const config = getConfig.call(this);
         const { form } = this.props;
@@ -44,6 +55,12 @@ class Index extends Component {
                     form={form}
                 />
                 <Button onClick={this.handleSubmit}>点击提交</Button>
+                <StaticModal 
+                    visible={this.state.visible}
+                    onCancel={this.checkModal}
+                    onOk={this.checkModal}
+                />
+                <Button onClick={()=>{this.openModal()}}>点击打开模态框</Button>
             </div>
         )
     }
