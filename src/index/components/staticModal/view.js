@@ -4,6 +4,7 @@ import { Modal } from 'antd';
 const Example = (props) => {
     const { visible, ...reset } = props;
     useEffect(() => {
+         
     },[visible]);
     return (
         <Modal 
@@ -12,9 +13,12 @@ const Example = (props) => {
         />
     )
 }
+const showModal = (props) => {
+    alert('static属性有什么用?')
+}
 
 class StaticModal extends Component {
-    static getshow  = (props) => { Example(props) }
+    static getshow  = (props) => { showModal(props) }
     render(){
         return <Example { ...this.props }/>
     }

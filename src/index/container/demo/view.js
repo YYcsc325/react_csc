@@ -4,6 +4,9 @@ import FormView from '../../components/Form/formView.js'
 import { getConfig } from './config.js';
 import { debounce } from '../../utils/indexAll'
 import StaticModal from '../../components/staticModal/view'
+
+const getshow = StaticModal.getshow;
+
 class Index extends Component {
     constructor(props) {
         super(props)
@@ -35,6 +38,7 @@ class Index extends Component {
         })
     }
     openModal = () => {
+        getshow();
         this.setState({
             visible: true
         })
