@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import './index.less';
+import LeftComponent from './Components/leftComponent';
+import RightComponent from './Components/RightComponent'
 import { Button, notification } from 'antd';
 import loading from '~components/loading/loading'
 
@@ -10,44 +12,14 @@ class Index extends Component {
 
         }
     }
-
     componentDidMount() {
-        loading.showLoading();
-    }
-
-    onLogin = (bol) => {
-        if(bol){
-            this.props.history.push('/home')
-        }else{
-            notification.open({
-                message: '消息提示框',
-                description:
-                  '请先点击登录',
-                onClick: () => {
-                  console.log('请先点击登录');
-                },
-            })
-        }
-        
+        // loading.showLoading();
     }
     render() {
-        const { userLogin } = this.props;
         return (
-            <div className='login'>
-                <Button 
-                  type="primary"
-                  onClick={()=>{this.props.login({
-                      login: true
-                  })}}
-                >
-                    点击登录
-                </Button>
-                <Button
-                  type="primary"
-                  onClick={()=>{this.onLogin(userLogin)}}
-                >
-                    点击跳转
-                </Button>
+            <div className='signup-form-container'>
+                <LeftComponent />
+                <RightComponent />
             </div>
         )
     }

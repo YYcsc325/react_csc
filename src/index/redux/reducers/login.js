@@ -1,5 +1,4 @@
 import { LOGIN } from '../actions/action';
-import { getIn } from '~utils/indexAll.js' 
 /*
 * 初始化state
 */
@@ -11,8 +10,7 @@ const initState = {
 * reducer     state为当前的state
 */
 export default function reducer(state = initState, action) {
-  const { payload } = action;
-  // console.log(getIn(payload, ['type'], ''))
+  const { payload = {} } = action;
   switch (action.type) {
     case LOGIN:
       return {

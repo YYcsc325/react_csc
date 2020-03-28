@@ -40,7 +40,7 @@ import { Button, Select, Form, Input } from 'antd';
                       style={style}
                       className={className}
                       label={
-                        <span>{label}</span>
+                        label && <span>{label}</span>
                       }
                       {...newFormItemLayout}
                     >
@@ -51,7 +51,8 @@ import { Button, Select, Form, Input } from 'antd';
                  )
              },
              input: (item, newFormItemLayout) => {
-                 const { onChange, width, placeholder, disabled, rules, initialValue, key, label } = item;
+                 const { onChange, style = {}, placeholder, disabled, rules, initialValue, key, label, customRender } = item;
+                 const { width, ...reset } = style;
                  return (
                     <FormItem
                       label={label}
@@ -61,12 +62,15 @@ import { Button, Select, Form, Input } from 'antd';
                         rules: rules,
                         initialValue: initialValue,
                       })(
-                        <Input
-                          onChange={onChange}
-                          style={{ width: width || '100%' }}
-                          placeholder={placeholder}
-                          disabled={disabled}
-                        />,
+                        <div>
+                          {customRender && customRender()}
+                          <Input
+                            onChange={onChange}
+                            style={{ width: width || '100%', ...reset }}
+                            placeholder={placeholder}
+                            disabled={disabled}
+                          />
+                        </div>
                       )}
                     </FormItem>
                  )
@@ -108,7 +112,7 @@ import { Button, Select, Form, Input } from 'antd';
                             {
                               required: false,
                             },
-                          ];
+                        ];
                         if (item.required) {
                             item.rules = item.rules.concat({
                               required: true,

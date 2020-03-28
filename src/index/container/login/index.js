@@ -16,7 +16,9 @@ const mapStateToProps = (state, props) => {
 const mapDispatchToProps = (dispatch, props) => {
   return {
     login(value){
-      dispatch(login(value))
+      dispatch(login({
+        login: value
+      }))
     }
   };
 };
