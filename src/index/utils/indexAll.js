@@ -5,8 +5,10 @@
 import debounce from './debounce.js';
 import arr from './arr.js';
 import localMessage from './localMessage.js';
+import getIn from './getIn.js'
 export {
     debounce,
     arr,
-    localMessage
+    localMessage,
+    getIn
 }

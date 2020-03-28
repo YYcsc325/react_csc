@@ -20,7 +20,7 @@ window.appHistory = history;
 
 //登录页面
 const Login = loadComponent(() => import('./container/login/index'));
-
+console.log(Store.getState().login.userLogin, 'store')
 const ProvideRoute = ({component: Component, ...rest}) => {
   return <Route
           {...rest}

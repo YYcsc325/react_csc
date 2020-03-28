@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import './index.less';
 import { Button, notification } from 'antd';
-import loading from '../../components/loading/loading'
-
+import loading from '~components/loading/loading'
 
 class Index extends Component {
     constructor(props) {
@@ -13,7 +12,7 @@ class Index extends Component {
     }
 
     componentDidMount() {
-        // loading.showLoading();
+        loading.showLoading();
     }
 
     onLogin = (bol) => {

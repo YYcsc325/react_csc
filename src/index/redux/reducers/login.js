@@ -1,5 +1,5 @@
 import { LOGIN } from '../actions/action';
-
+import { getIn } from '~utils/indexAll.js' 
 /*
 * 初始化state
 */
@@ -12,6 +12,7 @@ const initState = {
 */
 export default function reducer(state = initState, action) {
   const { payload } = action;
+  // console.log(getIn(payload, ['type'], ''))
   switch (action.type) {
     case LOGIN:
       return {
