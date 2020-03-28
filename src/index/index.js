@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import Store from './redux/store';             // 让所有组件都能用store
-import '@dep/axios'
+// import '@dep/axios'
 import zhCN from 'antd/es/locale/zh_CN';
 import {
   HashRouter as Router,
