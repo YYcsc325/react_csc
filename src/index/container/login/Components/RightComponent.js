@@ -26,7 +26,7 @@ class RightComponent extends Component {
                     <div>
                       <FormView 
                         config={config}
-                        className={'RightComponent'}
+                        className={'formViewStyle'}
                         form={form}
                       />
                     </div>

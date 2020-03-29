@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Checkbox, Button } from 'antd'; 
+import './index.less'
 const formItemLayout = {
     labelCol: {
       xs: { span: 24 },
@@ -51,9 +52,9 @@ export default function listConfig(){
             key: 'customCheckBox',
             formItemLayout: formItemLayout,
             render: () => {
-                return <div>
+                return <div className='selectCheckBox'>
                     <span style={{float: 'left'}}><Checkbox>Remember me</Checkbox></span>
-                    <a style={{float: 'right', color: '#3195cb', fontSize: '13px', textAlign: 'right'}}>Forgot password?</a>
+                    <a>Forgot password?</a>
                 </div>
             }
         },{
@@ -61,7 +62,23 @@ export default function listConfig(){
             key: 'customSubmit',
             formItemLayout: formItemLayout,
             render: () => {
-                return <div style={{height: '50px', borderRadius: '4px', backgroundColor: '#3195cb', cursor: 'pointer', textAlign: 'center', fontSize: '17px', color: '#fff', lineHeight: '50px'}}>Log in</div> 
+                return <div className='loginStyle'>Log in</div> 
+            }
+        },{
+            type:'custom',
+            key: 'customSubmitText',
+            formItemLayout: formItemLayout,
+            render: () => {
+                return <div className='loginTextStyle'>
+                    <div className='loginTextStyle_header'>Don't have an account? Register here.</div>
+                    <div className='loginLanguage'>
+                        <a>English</a>
+                        <a>Deutsch</a>
+                        <a>Português</a>
+                        <a>Español</a>
+                        <a>Français</a>
+                    </div>
+                </div> 
             }
         }
     ]
