@@ -7,6 +7,14 @@ import listConfig from '../listConfig';
 import '../index.less';
 
 class RightComponent extends Component {
+    handleSubmit = () => {
+        const { form } = this.props;
+        form.validateFields((err, values)=>{
+            if(!err){
+                this.props.login(values);
+            }
+        })
+    }
     render(){
         const config = listConfig.call(this);
         const { form } = this.props;

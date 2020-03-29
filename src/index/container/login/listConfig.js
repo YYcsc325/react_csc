@@ -14,12 +14,12 @@ const formItemLayout = {
 export default function listConfig(){
     return [
         {
-            key: 'userEmail',
+            key: 'email',
             type: 'input',
             rules: [
                 {
                     required: true,
-                    message: '必填'
+                    message: 'pleace input email'
                 }
             ],
             style: {
@@ -40,7 +40,7 @@ export default function listConfig(){
             rules: [
                 {
                     required: true,
-                    message: 'pleace input username'
+                    message: 'pleace input passWord'
                 }
             ],
             customRender: () => {
@@ -62,7 +62,7 @@ export default function listConfig(){
             key: 'customSubmit',
             formItemLayout: formItemLayout,
             render: () => {
-                return <div className='loginStyle'>Log in</div> 
+                return <div className='loginStyle' onClick={()=>{this.handleSubmit()}}>Log in</div> 
             }
         },{
             type:'custom',

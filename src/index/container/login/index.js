@@ -4,21 +4,16 @@ import PageView from './view'
 const login = ( payload = {} ) => {
   return {
     type: 'LOGIN',
+    url: '/inforgram/user',
     payload
   }
 }
 const mapStateToProps = (state, props) => {
-  const { login: { userLogin } } = state;
-  return {
-    userLogin
-  };
 };
 const mapDispatchToProps = (dispatch, props) => {
   return {
     login(value){
-      dispatch(login({
-        login: value
-      }))
+      dispatch(login(value))
     }
   };
 };

@@ -25,7 +25,7 @@ const ProvideRoute = ({component: Component, ...rest}) => {
           {...rest}
           render = {props => {
             console.log(Store.getState().login, 'Store')
-              return Store.getState().login.userLogin ?  <Component {...props}/> : <Redirect to={{pathname: '/login'}}/>          
+              return Store.getState().login.user ?  <Component {...props}/> : <Redirect to={{pathname: '/login'}}/>          
           }}
       />
 }

@@ -5,5 +5,6 @@ export default {
     // 用户列表接口管理
     cartFour: '/cart/four',
     cartFive: '/cart/five',
-    cartSix: '/cart/six'
+    cartSix: '/cart/six',
+    inforgramUser: '/inforgram/user'
 }

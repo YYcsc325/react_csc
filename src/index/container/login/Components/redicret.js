@@ -9,7 +9,7 @@ let mockData = [
 ]
 class RedicretComponent extends Component {
     render(){
-        const { name = '', rel = '', title = '', style = {}, imgUrl = '' } = this.props;
+        const { name = '', rel = '', title = '', style = {} } = this.props;
         const { backgroundColorHover, opacity, ...reset } = style;
         return (
             <a 
@@ -17,6 +17,7 @@ class RedicretComponent extends Component {
               ref={(ref)=>{this.aRef = ref}}
               title={title} 
               style={{...reset}}
+              className={rel}
               onMouseOver={()=>{
                   this.aRef.style.backgroundColor = backgroundColorHover
                   this.aRef.style.opacity = opacity
@@ -25,7 +26,7 @@ class RedicretComponent extends Component {
                   this.aRef.style.backgroundColor = style.backgroundColor
                   this.aRef.style.opacity = 1
               }}
-            ><img src={imgUrl}></img>{name}</a>   
+            >{name}</a>   
         )
     }
 }

@@ -1,11 +1,13 @@
-import axios from 'axios'
-const doMain = 'http://127.0.0.1:3000'
+import axios from 'axios';
+import { objToQs } from '~utils/utils';
+const doMain = 'http://127.0.0.1:3000';
 class Server {
-    getParams = (url, params) => {
+    getParams = (url, params = {}) => {
+        const paramsData = objToQs(params);
         return new Promise((resolve,reject)=>{
             axios({
                 method: "get",
-                url: `${doMain}${url}/${params}`
+                url: `${doMain}${url}?${paramsData}`
             }).then(data=>{
                 resolve(data)
             }).catch(err=>{

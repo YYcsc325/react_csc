@@ -19,7 +19,7 @@ class Index extends Component {
         return (
             <div className='signup-form-container'>
                 <LeftComponent />
-                <RightComponent />
+                <RightComponent {...this.props}/>
             </div>
         )
     }

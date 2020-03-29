@@ -1,23 +1,28 @@
 import { LOGIN } from '../actions/action';
+import { getParams } from '../../serve/method'
 /*
 * 初始化state
 */
 const initState = {
-  userLogin: false,
+  user: {},
 };
 
 /*
 * reducer     state为当前的state
 */
-export default function reducer(state = initState, action) {
+export default async function reducer(state = initState, action) {
   const { payload = {} } = action;
-  switch (action.type) {
-    case LOGIN:
-      return {
-        ...state,
-        userLogin: payload.login,     // 替换当前的state
-      };
-    default:
-      return state;
+  let loginData = await getParams(action.url, payload);
+  if(loginData.code === 200){
+    switch (action.type) {
+      case LOGIN:
+        return {
+          ...state,
+          user: loginData.data,     // 替换当前的state
+        };
+      default:
+        return state;
+    }
   }
+  return loginData;
 }
