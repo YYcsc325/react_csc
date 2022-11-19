@@ -21,7 +21,7 @@
     "csc_webpack": "^1.0.9",
     "history": "^4.7.2",
     "webpack": "^4.39.3",
-    "webpack-cli": "^3.3.8",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.8.2"
   },
   "dependencies": {
